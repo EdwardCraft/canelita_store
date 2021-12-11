@@ -112,48 +112,29 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <!-- Links -->
                     <ul class="navbar-nav ">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarWelcome" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       <li class="nav-item ">
+                            <a href={% url 'home' %} class="nav-link js-scroll-trigger">
                                 Home
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarWelcome">
-                                 <a class="dropdown-item " href="index.html">
-                                    Home-1
-                                </a>
-                                <a class="dropdown-item " href="index-2.html">
-                                    Home-2
-                                </a>
-                                <a class="dropdown-item " href="index-3.html">
-                                    Home-3
-                                </a>
-                                <a class="dropdown-item " href="index-4.html">
-                                    Home-4
-                                </a>
-                            </div>
                         </li>
                         <li class="nav-item ">
-                            <a href="about.html" class="nav-link js-scroll-trigger">
-                                Nosotros
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a href="service.html" class="nav-link js-scroll-trigger">
+                            <a href={% url 'productos' %} class="nav-link js-scroll-trigger">
                                 Productos
                             </a>
                         </li>
                         <li class="nav-item ">
-                            <a href="pricing.html" class="nav-link js-scroll-trigger">
-                                Precios
+                            <a href={% url 'distribuidores'%} class="nav-link js-scroll-trigger">
+                                Distribuidores
                             </a>
                         </li>
                         <li class="nav-item ">
-                            <a href="contact.html" class="nav-link">
-                                Contactenos
+                            <a href={% url 'colaboradores' %} class="nav-link js-scroll-trigger">
+                                Coladoradores
                             </a>
                         </li>
                     </ul>
                     <ul class="ml-lg-auto list-unstyled m-0">
-                        <li><a href="#" class="btn btn-white btn-circled">Get a quote</a></li>
+                        <li><a href="#" class="btn btn-white btn-circled">Ingresar</a></li>
                     </ul>
                 </div> <!-- / .navbar-collapse -->
             </nav>
@@ -181,7 +162,7 @@
                         <a href="#" class="footer-brand text-white">
                             Canelita Store
                         </a>
-                        <p>Nosotros</p>
+                        <p>Canelita Store es lider en la idustria, en la venta de productos orientales.</p>
                     </div>
                 </div>
 
@@ -191,18 +172,18 @@
                         <!-- Links -->
                         <ul class="footer-links ">
                             <li>
-                                <a href="#">
-                                    Nosotros
+                                <a href={% url 'colaboradores' %}>
+                                    Colaboradores
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href={% url 'productos' %}>
                                     Productos
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
-                                    Precios
+                                <a href={% url 'distribuidores' %}>
+                                    Distribuidores
                                 </a>
                             </li>
                             <li>
@@ -232,6 +213,10 @@
                 <div class="col-lg-3 ml-lg-auto col-sm-12">
                     <div class="footer-widget">
                         <h3>Agradecimientos</h3>
+                        <ul class="list-unstyled footer-links">
+                            <li><i class="fas fa-chalkboard-teacher"></i>JOSUE MIGUEL FLORES PARRA</li>
+                            <li>
+                        </ul>
                         <!-- Links -->
                     </div>
                 </div>

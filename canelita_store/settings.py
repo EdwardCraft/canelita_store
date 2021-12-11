@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tiendaCanelita',
+    'usuarioCanelita',
 ]
 
 MIDDLEWARE = [
@@ -78,7 +80,7 @@ WSGI_APPLICATION = 'canelita_store.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'canelitadb',
+        'NAME': 'canelita_db',
         'USER': 'root',
         "PASSWORD": '1234',
         'PORT': '3306'
