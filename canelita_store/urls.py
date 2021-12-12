@@ -9,6 +9,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 import tiendaCanelita.views as views
 import usuarioCanelita.views as user_views
+from django.contrib.auth import views as auth_views
 
 #urlpatterns = [
  #   path('admin/', admin.site.urls),
@@ -26,7 +27,7 @@ urlpatterns = [
     url(r'^registro/$', user_views.vista_reigstro, name='registro'),
     url(r'^sesionExitoso/$', user_views.vista_registroExitoso, name='registroExitoso'),
     url(r'^sesion/$', user_views.vista_sesion, name='sesion'),
-
+    path('accounts/', include('django.contrib.auth.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 #handler404 = views.error_40
