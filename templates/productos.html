@@ -3,14 +3,38 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-    <!-- HERO
-    ================================================== -->
     <section class="banner-area py-7">
         <!-- Content -->
         <div class="container">
             <div class="row  align-items-center">
-                <div class="col-md-12 col-lg-7 text-center text-lg-left">
-                    PRODUCTOS
+                <div class="col-md-8 col-sm-6 col-md-6 col-lg-7 text-center text-lg-left">
+                    {% if producto %}
+                        {% for producto in producto %}
+                            {% if forloop.first %}<div class="row">{% endif %}
+                            <div class="col-4">
+                                <div class="card h-100">
+                                 <img class="card-img-top" height="180" src="{{ producto.Imagen.url }}" alt="{{ producto.Nom_Producto }}">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center">{{ producto.Nom_Producto }}</h5>
+                                        <hr />
+                                        <h6 class="card-subtitle">Cantidad en tienda: {{ producto.Unidades }}</h6>
+                                        <h6 class="card-subtitle">Precio: $ {{ producto.Precio }}</h6>
+                                        <h6 class="card-subtitle">Tipo: {{ producto.Tipo }}</h6>
+                                        <hr />
+                                        <form action="/compra/{{ producto.id }}" method="GET" class="mt-auto">
+                                            <input value="Comprar" class="btn btn-outline-dark btn-lg" type="submit">
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
+                            {% if forloop.last %}</div>{% endif %}
+                        {% endfor %}
+                    {% else %}
+                        <div class="alrt alert-danger">No hay productos registrados</div>
+                    {% endif %}
                 </div>
 
             </div> <!-- / .row -->

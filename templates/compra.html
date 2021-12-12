@@ -1,0 +1,56 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+    <section class="section" id="pricing">
+        <!-- Content -->
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6 text-center">
+                    <div class="section-heading">
+                        <!-- Heading -->
+                        <h2 class="section-title">
+                            Realize su compra facilmente
+                        </h2>
+                        <!-- Subheading -->
+                        <p>
+                            Seleccione la cantidad de unidades que quiere adquirir, y seleccione comprar ahora.
+                        </p>
+                    </div>
+                </div>
+            </div> <!-- / .row -->
+
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-sm-6 col-md-6">
+                </div>
+                <div class="col-lg-4 col-sm-6 col-md-6  text-center">
+                    <div class="pricing-box">
+                        <form action="/registroVenta/{{ producto.id }}"  method="GET">
+                        <h3>{{ producto.Nom_Producto }}</h3>
+                        <img class="card-img-top" height="180" src="{{ producto.Imagen.url }}" alt="{{ producto.Nom_Producto }}">
+                        <ul class="price-features list-unstyled">
+                            <li>Tipo: {{ producto.Tipo }} </li>
+                            <li>Precio: $ {{ producto.Precio }} mxn</li>
+                            <li>Caracteristica: {{ producto.Caracteristicas }}</li>
+                            <li>Seleccione distribuidor:
+                                 <select name="distribuidor" id="distribuidor">
+                                     {% for distribuidor in distribuidor %}
+                                        <option value="{{ distribuidor.No_Distribuidor }}">{{ distribuidor.Nom_Distribuidor }}</option>
+                                     {% endfor %}
+                                </select>
+                            </li>
+                            <li>Unidades a comprar: <input id="number" name="unidades" type="number" value="1" max="20" min="1"></li>
+                        </ul>
+                            <input value="Comprar ahora" class="btn btn-primary btn-circled" type="submit">
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-8 col-md-6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+{%  endblock %}
