@@ -1,4 +1,4 @@
-{% extends "./base.html" %}
+{% extends "../base.html" %}
 {% load static %}
 {% block title %}Home{% endblock %}
 
@@ -17,28 +17,27 @@
                             Al estar registrado, tienes beneficios de notificaciones de nuevos productos,
                             descuentos relanpagos y  mucho mas.
                             </h3>
+                             <h3>
+                                 {% csrf_token %}
+                                 {% if form.errors %}
+                                     Usuario o contraseña no coiciden. Por favor intenta otra vez
+                                 {% endif %}
+                             </h3>
                         </div>
-                        <form action="" method="POST"> {% csrf_token %}
+                        <form action="" method="POST">
+                            {% csrf_token %}
                             <div class="price-block">
                                     <h3 class="h6 small d-block text-uppercase price-block">
-                                        usuario
-                                        <span class="text-danger">*</span>
+                                        {{ form.username }}
                                     </h3>
-                                    <div class="input-group">
-                                        <input class="form-control" name="user_name" id="user_name" required="" placeholder="Don Puerko" type="text">
-                                    </div>
                             </div>
                              <div class="price-block">
                                     <h3 class="h6 small d-block text-uppercase price-block">
-                                        contraseña
-                                        <span class="text-danger">*</span>
+                                        {{ form.password }}
                                     </h3>
-                                    <div class="input-group">
-                                        <input class="form-control" name="pass" id="pass" required="" placeholder="******" type="text">
-                                    </div>
                             </div>
                             <div class="price-block">
-                                <input name="submit" type="submit" class="btn btn-primary btn-circled" value="ingresar">
+                                <input type="submit" class="btn btn-primary btn-circled" value="ingresar">
                             </div>
                         </form>
                         <div class="price-block">

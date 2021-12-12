@@ -4,17 +4,25 @@ from django.shortcuts import render
 from django.shortcuts import render
 from tiendaCanelita.models import *
 import random
+from django.contrib.auth.decorators import login_required
+
+
+
 def vista_home(request):
     return render(request, "home.html")
 
+
+@login_required
 def vista_prodctos(request):
     producto = Producto.objects.all()
     return render(request, 'productos.html', {"producto": producto})
 
+@login_required
 def vista_distribuidores(request):
     distribuidor = Distribuidor.objects.all()
     return render(request, 'distribuidores.html', {"distribuidor": distribuidor})
 
+@login_required
 def vista_colaboradores(request):
     colaborador = Colaboradores.objects.all()
     return render(request, 'colaboradores.html', {"colaborador": colaborador})
