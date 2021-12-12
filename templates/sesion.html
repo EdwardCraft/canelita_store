@@ -1,0 +1,30 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="section" id="pricing">
+        <!-- Content -->
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-sm-6 col-md-6 text-center">
+                    <div class="pricing-box">
+                        <div class="price-block">
+                             <h2>Inicia sesion</h2>
+                        </div>
+                         <div class="price-block">
+                             <h3>
+                            Al estar registrado, tienes beneficios de notificaciones de nuevos productos,
+                            descuentos relanpagos y  mucho mas.
+                            </h3>
+                        </div>
+                        <a href="#" class="btn btn-primary btn-circled">ingresar</a>
+                        <div class="price-block">
+                            <p>no tienes cuenta? registrate  <a href={% url 'registro' %}>aqui</a> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+{%  endblock %}

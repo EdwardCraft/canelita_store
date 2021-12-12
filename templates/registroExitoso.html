@@ -1,0 +1,40 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+   <section class="banner-area py-8">
+        <!-- Content -->
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-1"></div>
+                <div class="col-md-11 col-lg-7  text-center text-lg-left">
+                    <div class="main-banner">
+                        <!-- Heading -->
+                        <h2 class="display-4 mb-4 font-weight-normal">
+                            Gracias por tu registro!
+                        </h2>
+                        <!-- Subheading -->
+                        <h3 class="display-5 mb-4 font-weight-normal">
+                            haz hecho muy feliz a un french poodle : )
+                        </h3>
+                         <!-- Button -->
+                        <p class="mb-0">
+                            <a href={% url 'productos' %}  class="btn btn-primary btn-circled">
+                                Comprar ahora
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 d-none d-lg-block">
+                    <div class="banner-img-block">
+                        <img src="{% static 'images/canelita_feliz.png' %}" alt="banner-img" class="img-fluid">
+                    </div>
+                </div>
+
+            </div> <!-- / .row -->
+        </div> <!-- / .container -->
+    </section>
+
+{%  endblock %}

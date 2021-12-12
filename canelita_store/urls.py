@@ -8,7 +8,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 import tiendaCanelita.views as views
-
+import usuarioCanelita.views as user_views
 
 #urlpatterns = [
  #   path('admin/', admin.site.urls),
@@ -23,6 +23,9 @@ urlpatterns = [
     url(r'^productos/$', views.vista_prodctos, name='productos'),
     url(r'^distribuidores/$', views.vista_distribuidores, name='distribuidores'),
     url(r'^colaboradores/$', views.vista_colaboradores, name='colaboradores'),
+    url(r'^registro/$', user_views.vista_reigstro, name='registro'),
+    url(r'^sesionExitoso/$', user_views.vista_registroExitoso, name='registroExitoso'),
+    url(r'^sesion/$', user_views.vista_sesion, name='sesion'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

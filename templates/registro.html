@@ -1,0 +1,59 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="section" id="pricing">
+        <!-- Content -->
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-sm-6 col-md-6 text-center">
+                    <div class="pricing-box">
+                        <div class="price-block">
+                             <h2>Registro</h2>
+                        </div>
+                         <div class="price-block">
+                             <h3>
+                            Al estar registrado, tienes beneficios de notificaciones de nuevos productos,
+                            descuentos relanpagos y  mucho mas.
+                            </h3>
+                        </div>
+                        <form action="" method="POST"> {% csrf_token %}
+                            <div class="price-block">
+                                    <h3 class="h6 small d-block text-uppercase price-block">
+                                        Tu nombre
+                                        <span class="text-danger">*</span>
+                                    </h3>
+                                    <div class="input-group">
+                                        <input class="form-control" name="name" id="name" required="" placeholder="Edward Flores" type="text">
+                                    </div>
+                            </div>
+                            <div class="price-block">
+                                    <h3 class="h6 small d-block text-uppercase price-block">
+                                        nombre de usuario
+                                        <span class="text-danger">*</span>
+                                    </h3>
+                                    <div class="input-group">
+                                        <input class="form-control" name="user_name" id="user_name" required="" placeholder="Don Puerko" type="text">
+                                    </div>
+                            </div>
+                             <div class="price-block">
+                                    <h3 class="h6 small d-block text-uppercase price-block">
+                                        contraseña
+                                        <span class="text-danger">*</span>
+                                    </h3>
+                                    <div class="input-group">
+                                        <input class="form-control" name="pass" id="pass" required="" placeholder="******" type="text">
+                                    </div>
+                            </div>
+                            <div class="price-block">
+                                <input name="submit" type="submit" class="btn btn-primary btn-circled" value="Send Message">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+{%  endblock %}
