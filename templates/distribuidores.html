@@ -10,7 +10,30 @@
         <div class="container">
             <div class="row  align-items-center">
                 <div class="col-md-12 col-lg-7 text-center text-lg-left">
-                    DISTRIBUIDORES
+
+                    {% if distribuidor %}
+                        {% for distribuidor in distribuidor %}
+
+                            {% if forloop.first %}<div class="row">{% endif %}
+
+                            <div class="col-4">
+                                <div class="card h-100">
+                                 <img class="card-img-top" height="180" src="{{ distribuidor.Imagen_Dis.url }}" alt="{{ distribuidor.Nom_Distribuidor }}">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center">{{ distribuidor.Nom_Distribuidor }}</h5>
+                                        <hr />
+                                        <h6 class="card-subtitle">Descripción: {{ distribuidor.Descripcion }}</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
+                            {% if forloop.last %}</div>{% endif %}
+                        {% endfor %}
+                    {% else %}
+                        <div class="alrt alert-danger">No hay colaboradores registrados</div>
+                    {% endif %}
+
                 </div>
 
             </div> <!-- / .row -->
